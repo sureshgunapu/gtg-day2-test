@@ -2,14 +2,16 @@
 <html>
 <head>
     <title>GTG Day 2 Test</title>
-    <!-- Manually define gtag and trigger the GTM start event since setUpTag is disabled -->
     <script>
+        // Ensure dataLayer exists
         window.dataLayer = window.dataLayer || [];
         
-        // Define the global gtag function
-        function gtag(){dataLayer.push(arguments);}
+        // EXPLICITLY attach gtag to the global window object
+        window.gtag = function() { 
+            window.dataLayer.push(arguments); 
+        };
         
-        // Trigger the container load
+        // Trigger the container load (since Akamai's injection omits this)
         window.dataLayer.push({
             'gtm.start': new Date().getTime(), 
             event: 'gtm.js'

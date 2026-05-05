@@ -2,21 +2,6 @@
 <html>
 <head>
     <title>GTG Day 2 Test</title>
-    <script>
-        // Ensure dataLayer exists
-        window.dataLayer = window.dataLayer || [];
-        
-        // EXPLICITLY attach gtag to the global window object
-        window.gtag = function() { 
-            window.dataLayer.push(arguments); 
-        };
-        
-        // Trigger the container load (since Akamai's injection omits this)
-        window.dataLayer.push({
-            'gtm.start': new Date().getTime(), 
-            event: 'gtm.js'
-        });
-    </script>
 </head>
 <body>
     <h1>Day 2 Verification Page</h1>

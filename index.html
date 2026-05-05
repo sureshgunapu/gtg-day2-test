@@ -2,6 +2,14 @@
 <html>
 <head>
     <title>GTG Day 2 Test</title>
+    <!-- Manually trigger the GTM start event since setUpTag is disabled -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'gtm.start': new Date().getTime(), 
+            event: 'gtm.js'
+        });
+    </script>
 </head>
 <body>
     <h1>Day 2 Verification Page</h1>
